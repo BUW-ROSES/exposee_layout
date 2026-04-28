@@ -1,0 +1,134 @@
+% !TEX root = ../exposee.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% template/frontmatter.tex
+%% Title page, declaration of authorship + AI disclosure form, TOC.
+%% Do not edit unless you know what you are doing.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagenumbering{Roman}
+\pagestyle{plain}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Title page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+  \centering
+
+  \vspace*{2em}
+  \includegraphics[width=11cm]{\buwlogopdf}
+
+  \vspace{5em}
+  {\Large\textsc{\thesistype} in \textsc{\studyprogram}}
+
+  \vspace{4em}
+  \noindent{\color{primary}\rule{\textwidth}{1pt}}\par
+  \vspace{0.6em}
+  {\Huge\bfseries\thesistitle\par}
+  \vspace{0.6em}
+  \noindent{\color{primary}\rule{\textwidth}{1pt}}
+
+  \vspace{3em}
+  {\Large\bfseries\authorname}\\[0.6em]
+  {\large\submissiondate}
+
+  \vspace{3em}
+  {\large\researchgroup}\\
+  {\large\faculty}\\
+  {\large University of Wuppertal}
+
+  \vfill
+
+  \noindent\begin{tabular}{@{}p{3.8cm}p{8cm}@{}}
+    Advisor:         & \textbf{\supervisor}     \\[0.7em]
+    First Examiner:  & \textbf{\firstexaminer}  \\[0.7em]
+    Second Examiner: & \textbf{\secondexaminer} \\
+  \end{tabular}
+\end{titlepage}
+
+\ifbool{twoside}{}{\stepcounter{page}}
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Declaration of Authorship + AI Disclosure (DE + EN, BUW-adapted)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pdfbookmark[1]{Declaration}{declaration}
+
+\section*{Eigenständigkeitserklärung}
+{\selectlanguage{ngerman}%
+Hiermit erkläre ich, dass ich keine Arbeit in gleicher oder ähnlicher Fassung bereits als Prüfungsleistung an der Bergischen Universität Wuppertal oder einer anderen Hochschule eingereicht habe.
+
+\noindent
+Ich versichere, dass die vorliegende Arbeit auf meiner konzeptionellen, methodischen und inhaltlichen Eigenleistung basiert und ich keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe. Alle direkten und indirekten Zitate sowie KI-generierten fachlichen Inhalte habe ich unter Angabe der Quellen kenntlich gemacht. Diese Versicherung bezieht sich auf alle Textbausteine, Tabellen, Codes, Grafiken und andere Abbildungen. Mir ist bewusst, dass die Unterlassung der angemessenen Dokumentation mit einem Täuschungsversuch aufgrund der Verwendung nicht zulässiger Hilfsmittel gleichzusetzen ist.
+
+\noindent
+Im Falle der Verwendung von KI-Tools habe ich allen Output sorgfältig geprüft und übernehme die volle Verantwortung für eventuell durch die KI generierte fehlerhafte oder verzerrte Inhalte, fehlerhafte Referenzen, Verstöße gegen das Datenschutz- und Urheberrecht oder Plagiate.
+
+\noindent
+Ich erkläre mich außerdem damit einverstanden, dass die digitale Version dieser Arbeit zwecks Plagiatsprüfung verwendet wird.%
+}
+
+\section*{Declaration of Authorship}
+I hereby declare that I have never before submitted this paper in this or similar form for examination at Bergische Universität Wuppertal or any other institution or university.
+
+\noindent
+I profess that this paper is the result of my own conceptional, methodical and analytical work and that I have not used any sources or tools other than the ones stated.
+Any quotes, whether direct or indirect, and any substantial content that was generated with the help of AI have been fully disclosed by using proper marking and quotation.
+This declaration is valid for all textual elements, charts, codes, images and figures.
+I am aware that neglecting the proper documentation constitutes an attempt at deception by use of unauthorized aid.
+
+\noindent
+When using AI tools, I have critically reviewed and verified all output and assume full responsibility for any misrepresented or falsified content, faulty references, plagiarism and breaches of data protection or copyright laws that may result from the use of generative AI.
+
+\noindent
+I furthermore agree that the digital version of this thesis will be used to subject the paper to plagiarism examination.
+
+\noindent
+Not this English translation but only the official version in German is legally binding.
+
+\fbox{
+ \begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}
+    \begin{Form}
+    Beim Verfassen dieser Arbeit habe ich die unten aufgeführten KI-Tools für folgende Zwecke verwendet:
+
+    \noindent
+    In writing this paper, I have used the AI tools specified below for the following purposes:
+
+    \vspace{1em}
+
+    \TextField[
+      multiline=true,
+      height=10cm,
+      width=\textwidth,
+      borderstyle={solid},
+    ]{}
+
+    \vspace{1em}
+    \end{Form}
+  \end{minipage}
+}
+
+\vspace{2cm}
+\rule{3cm}{0.1pt} \hfill \rule{6cm}{0.1pt} \hfill \rule{3cm}{0.1pt}\\
+\hspace*{1cm} \textsc{Date} \hspace*{2.7cm} \textsc{\authorname} \hspace*{2.2cm} \textsc{Signature}
+
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Table of Contents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\markboth{\contentsname}{}
+\pdfbookmark[1]{\contentsname}{toc}
+\begingroup
+  \renewcommand{\markboth}[2]{}
+  \tableofcontents
+\endgroup
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% End of frontmatter — switch to arabic page numbering and main page style
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifbool{twoside}{\clearpage\hphantom{anchor}}{}%
+{\pagestyle{empty}\cleardoublepage}%
+\pagenumbering{arabic}%
+\setcounter{page}{1}%
+\pagestyle{scrheadings}%

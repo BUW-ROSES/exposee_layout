@@ -1,3 +1,9 @@
+## Build output PDF (only ignore the top-level expose PDF, not images/forms)
+/exposee.pdf
+
+## Claude Code session directory
+.claude/
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
@@ -280,4 +286,3 @@ TSWLatexianTemp*
 *.aux
 *.ist
 .DS_Store
-chapters/*.aux
